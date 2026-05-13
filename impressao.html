@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAIO nas Escolas | Versão para Impressão</title>
+    <style>
+      :root {
+        --green: #18a535;
+        --teal: #49b7c8;
+        --orange: #ff6a00;
+        --navy: #0d1b39;
+        --text: #1d1d1d;
+        --muted: #5a615f;
+        --paper: #ffffff;
+        --line: #d8e3dd;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--text);
+        background: #eef5f1;
+      }
+
+      .sheet {
+        width: min(100%, 1024px);
+        margin: 0 auto;
+        background: var(--paper);
+        min-height: 100vh;
+      }
+
+      .topbar {
+        height: 12px;
+        background: linear-gradient(90deg, var(--green), var(--teal), var(--orange));
+      }
+
+      .header {
+        padding: 28px 36px 20px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header-brand {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .header-brand img {
+        width: 72px;
+        height: 72px;
+        object-fit: contain;
+      }
+
+      .header-brand .logo-raio {
+        width: 82px;
+        height: 82px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        color: var(--navy);
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+
+      .header-meta p,
+      .footer p,
+      .section p,
+      li {
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .header-meta p {
+        color: var(--muted);
+      }
+
+      .content {
+        padding: 28px 36px 40px;
+        display: grid;
+        gap: 24px;
+      }
+
+      .section {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 18px 20px;
+      }
+
+      .section-title {
+        display: inline-block;
+        padding-left: 12px;
+        border-left: 5px solid var(--orange);
+        margin-bottom: 10px;
+      }
+
+      .grid-2,
+      .grid-3 {
+        display: grid;
+        gap: 16px;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .card {
+        padding: 14px;
+        border-radius: 14px;
+        background: #f8fbfa;
+        border: 1px solid var(--line);
+      }
+
+      .hero-note {
+        padding: 16px;
+        border-radius: 14px;
+        background: linear-gradient(145deg, rgba(24, 165, 53, 0.08), rgba(73, 183, 200, 0.08));
+      }
+
+      .image-box img,
+      .qr-box img {
+        width: 100%;
+        border-radius: 14px;
+        display: block;
+      }
+
+      ul {
+        margin: 8px 0 0;
+        padding-left: 18px;
+      }
+
+      .footer {
+        padding: 20px 36px 30px;
+        border-top: 1px solid var(--line);
+        background: #f8fbfa;
+      }
+
+      .footer strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--navy);
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .print-actions {
+        padding: 20px 36px 0;
+      }
+
+      .print-actions button {
+        border: 0;
+        border-radius: 999px;
+        padding: 12px 18px;
+        background: linear-gradient(135deg, var(--green), var(--teal));
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        .sheet {
+          width: 100%;
+        }
+
+        .print-actions {
+          display: none;
+        }
+
+        @page {
+          size: A4;
+          margin: 12mm;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sheet">
+      <div class="topbar"></div>
+
+      <div class="print-actions">
+        <button type="button" onclick="window.print()">Imprimir / Salvar em PDF</button>
+      </div>
+
+      <header class="header">
+        <div class="header-brand">
+          <img src="logo_PMCE.png" alt="Logo da Polícia Militar do Ceará" />
+          <img class="logo-raio" src="logo_raio.png" alt="Logo do RAIO" />
+          <div class="header-meta">
+            <h1>PROJETO RAIO NAS ESCOLAS</h1>
+            <p>POLÍCIA MILITAR DO CEARÁ / COMANDO DE POLICIAMENTO DE RONDAS DE AÇÕES INTENSIVAS E OSTENSIVAS - CPRAIO</p>
+            <p>NÚCLEO DE ESTATÍSTICA E ANÁLISE OPERACIONAL - NEAO / P-3 / CPRAIO</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="section">
+          <div class="section-title">
+            <h2>Apresentação</h2>
+          </div>
+          <div class="hero-note">
+            <p>
+              Esta é a versão para impressão da trilha educativa <strong>RAIO nas Escolas</strong>,
+              voltada a adolescentes, com foco em cidadania, prevenção, segurança
+              digital, respeito à abordagem policial e orientação sobre ingresso
+              na Polícia Militar do Ceará.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">
+            <h2>O que é o RAIO</h2>
+          </div>
+          <p>
+            O RAIO integra a PMCE como atuação especializada em policiamento
+            ostensivo com motocicletas, com mobilidade, presença, resposta rápida,
+            formação específica e serviço voltado à sociedade.
+          </p>
+          <div class="grid-3" style="margin-top: 14px;">
+            <div class="card"><h3>Mobilidade</h3><p>Deslocamento ágil em diferentes áreas.</p></div>
+            <div class="card"><h3>Presença</h3><p>Visibilidade e prevenção no território.</p></div>
+            <div class="card"><h3>Resposta</h3><p>Agilidade no atendimento de ocorrências.</p></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">
+            <h2>Mapa e Presença Territorial</h2>
+          </div>
+          <div class="grid-2">
+            <div class="image-box">
+              <img src="assets/images/extracted/p12_X41.png" alt="Mapa do Ceará usado como base visual do projeto" />
+            </div>
+            <div>
+              <p>
+                O projeto contempla municípios com presença do RAIO no Ceará.
+                Na versão digital interativa, o mapa pode ser conectado a camadas,
+                polígonos e busca por município.
+              </p>
+              <ul>
+                <li>Busca por município atendido.</li>
+                <li>Visualização de coordenadas e efetivo.</li>
+                <li>Base para evolução com dados territoriais.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">
+            <h2>Policial do RAIO e EPIs</h2>
+          </div>
+          <div class="grid-2">
+            <div class="image-box">
+              <img src="Imagens RAIO/Raio_09_PFEM.jpeg" alt="Policial feminina do RAIO em imagem institucional" />
+            </div>
+            <div>
+              <p><strong>Mensagem para os jovens:</strong> por trás da farda, existe estudo, disciplina, responsabilidade e compromisso com a proteção da sociedade.</p>
+              <ul>
+                <li>Capacete: proteção no deslocamento com motocicleta.</li>
+                <li>Coletes e proteções: reforçam a segurança no serviço.</li>
+                <li>Luvas e botas: contribuem para firmeza e controle.</li>
+                <li>Uniforme e identificação: fortalecem padronização e reconhecimento institucional.</li>
+              </ul>
+              <p style="margin-top: 10px;"><strong>Em destaque:</strong> sim, temos mulheres no RAIO.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">
+            <h2>Segurança para Jovens</h2>
+          </div>
+          <div class="grid-2">
+            <div class="card">
+              <h3>Abordagem policial segura</h3>
+              <ul>
+                <li>Mantenha a calma.</li>
+                <li>Deixe as mãos visíveis.</li>
+                <li>Avise antes de pegar qualquer objeto.</li>
+                <li>Responda com respeito.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Vida digital responsável</h3>
+              <ul>
+                <li>Não compartilhe imagens íntimas.</li>
+                <li>Não participe de ataques virtuais.</li>
+                <li>Não clique em links suspeitos.</li>
+                <li>Guarde provas e peça ajuda se for vítima.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">
+            <h2>Carreira e Canais Oficiais</h2>
+          </div>
+          <div class="grid-2">
+            <div class="card">
+              <h3>Ingresso na PMCE</h3>
+              <p>O caminho regular é por concurso público, conforme edital vigente.</p>
+              <ul>
+                <li>Concluir o ensino médio.</li>
+                <li>Acompanhar editais oficiais.</li>
+                <li>Realizar as etapas do concurso.</li>
+                <li>Ingressar na corporação e buscar capacitação.</li>
+              </ul>
+            </div>
+            <div class="grid-2">
+              <div class="qr-box">
+                <img src="assets/qrcodes/instagram-pmce.png" alt="QR Code do Instagram da PMCE" />
+                <p class="muted">@policiamilitardoceara</p>
+              </div>
+              <div class="qr-box">
+                <img src="assets/qrcodes/instagram-cpraio.png" alt="QR Code do Instagram do CPRAio" />
+                <p class="muted">@cpraiopmce</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <strong>PROJETO RAIO NAS ESCOLAS</strong>
+        <p>POLÍCIA MILITAR DO CEARÁ / COMANDO DE POLICIAMENTO DE RONDAS DE AÇÕES INTENSIVAS E OSTENSIVAS - CPRAIO</p>
+        <p>NÚCLEO DE ESTATÍSTICA E ANÁLISE OPERACIONAL - NEAO / P-3 / CPRAIO</p>
+        <p class="muted" style="margin-top: 8px;">
+          Este conteúdo possui finalidade educativa e informativa. As informações
+          institucionais, de ingresso e de atuação devem ser sempre confirmadas
+          pelos canais oficiais competentes.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
